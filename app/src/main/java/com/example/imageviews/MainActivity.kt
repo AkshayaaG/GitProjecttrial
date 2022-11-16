@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         btNext = findViewById(R.id.bt_next)
 
         val imageUrl1 = "https://i.imgur.com/tGbaZCY.jpg"
-        Log.d("TAG", "onCreate: "+imageUrl1)
         val imageUrl2 = "https://images.unsplash.com/photo-1666624481302-b466bb943c0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
         val imageUrl3 = "https://images.unsplash.com/photo-1668183261803-e8f2fb7622dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
         val imageUrl4 = "https://images.unsplash.com/photo-1668211834355-2cdf073f2351?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -49,7 +48,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        btNext?.setOnClickListener{
+        btNext.setOnClickListener{
+
+            Glide.with(this).load(imageUrl1).into(ivUrlPictures)
 
             Glide.with(this).load(imageUrl2).into(ivUrlPictures)
 
@@ -61,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this).load(imageUrl8).into(ivUrlPictures)
             Glide.with(this).load(imageUrl9).into(ivUrlPictures)
             Glide.with(this).load(imageUrl10).into(ivUrlPictures)
-            Glide.with(this).load(imageUrl1).into(ivUrlPictures)
         }
 
     }
